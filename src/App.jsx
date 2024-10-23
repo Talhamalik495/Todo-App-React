@@ -28,10 +28,19 @@ function App() {
 
     setTodos([...todoArr]);
   };
+  console.log(todos);
 
-  let deleteTodo = (todos) => {
-    console.log(todos);
+  let deleteTodo = (id) => {
+    console.log(id);
+
+    setTodos((prev) =>
+      
+      prev.filter((data) => {
+        data.id !== id;
+      })
+    );
   };
+
   return (
     <>
       <h1 className=" text-center text-black mt-5 w-[100%] h-10 flex justify-center items-center text-2xl">

@@ -12,18 +12,16 @@ function TodoList({ todos, deleteTodo, img }) {
             <h1 className=" w-[92%] pl-1 rounded-md" key={todo.id}>
               {todo.todo}
             </h1>
-            <button
+            {/* <button
               onClick={deleteTodo}
               className="w-8 h-8 text-white rounded-md  flex justify-center items-center "
             >
-              {/* <img className="w-8 h-8" src={img} alt="" /> */}
               <MdEdit size={30} />
-            </button>
+            </button> */}
             <button
-              onClick={deleteTodo}
+              onClick={() => deleteTodo(todo.id)}
               className="w-8 h-8 text-white rounded-md  flex justify-center items-center "
             >
-              {/* <img className="w-8 h-8" src={img} alt="" /> */}
               <MdDelete size={30} />
             </button>
           </div>
