@@ -13,7 +13,9 @@ function TodoList({ todos, deleteTodo, editTodo }) {
               {todo.todo}
             </h1>
             <button
-              onClick={editTodo}
+              onClick={() => {
+                editTodo(todo, todo.id);
+              }}
               className="w-8 h-8 text-white rounded-md  flex justify-center items-center "
             >
               <MdEdit size={30} />

@@ -33,9 +33,10 @@ function App() {
     console.log(id);
     setTodos((prev) => prev.filter((data) => data.id !== id));
   };
-  let editTodo = (todos, id) => {
+  let editTodo = (todo, id) => {
     console.log(id);
-    // setTodos((prev) => prev.filter((data) => data.id !== id));
+    console.log(todos);
+    setTodos((prev) => prev.map((data) => (data.id == id ? todo : data)));
   };
 
   return (
