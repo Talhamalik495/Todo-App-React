@@ -1,7 +1,7 @@
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 
-function TodoList({ todos, deleteTodo, img }) {
+function TodoList({ todos, deleteTodo, editTodo }) {
   console.log(todos);
   return (
     // <>
@@ -12,12 +12,12 @@ function TodoList({ todos, deleteTodo, img }) {
             <h1 className=" w-[92%] pl-1 rounded-md" key={todo.id}>
               {todo.todo}
             </h1>
-            {/* <button
-              onClick={deleteTodo}
+            <button
+              onClick={editTodo}
               className="w-8 h-8 text-white rounded-md  flex justify-center items-center "
             >
               <MdEdit size={30} />
-            </button> */}
+            </button>
             <button
               onClick={() => deleteTodo(todo.id)}
               className="w-8 h-8 text-white rounded-md  flex justify-center items-center "

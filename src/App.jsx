@@ -6,7 +6,6 @@ import imag1 from "./assets/download.png";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  console.log(inputValue);
 
   // const [todos,setTodos]=useState([
   //     {
@@ -32,13 +31,11 @@ function App() {
 
   let deleteTodo = (id) => {
     console.log(id);
-
-    setTodos((prev) =>
-      
-      prev.filter((data) => {
-        data.id !== id;
-      })
-    );
+    setTodos((prev) => prev.filter((data) => data.id !== id));
+  };
+  let editTodo = (todos, id) => {
+    console.log(id);
+    // setTodos((prev) => prev.filter((data) => data.id !== id));
   };
 
   return (
@@ -51,7 +48,7 @@ function App() {
         setInputValue={setInputValue}
         onClick={handleTodo}
       />
-      <TodoList todos={todos} deleteTodo={deleteTodo} img={imag1} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
     </>
   );
 }
