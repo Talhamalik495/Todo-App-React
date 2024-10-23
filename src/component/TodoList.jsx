@@ -10,9 +10,7 @@ function TodoList({ todos, deleteTodo, img }) {
               {todo.todo}
             </h1>
             <button
-              onClick={(todo) => {
-                console.log(todo);
-              }}
+              onClick={deleteTodo}
               className="w-8 h-8 text-black rounded-md bg-white flex justify-center items-center "
             >
               <img className="w-8 h-8" src={img} alt="" />
