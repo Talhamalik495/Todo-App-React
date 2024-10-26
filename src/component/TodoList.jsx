@@ -6,10 +6,10 @@ function TodoList({ todos, deleteTodo, editTodo, togleTodo, edit }) {
   console.log(todos);
   return (
     // <>
-    <div className="w-full h-[100%]  flex justify-center flex-col mt-6 items-center gap-4 pb-3 px-5 ">
+    <div className="w-full max-h-56 flex justify-center flex-col mt-6 items-center gap-4 pb-3 px-5 overflow-scroll ">
       {todos.map((todo, index) => {
         return (
-          <div className="flex bg-black w-full h-12 items-center rounded-md  text-white pr-1 gap-1 relative">
+          <div className="flex bg-black w-full min-h-12 items-center rounded-md  text-white pr-1 gap-1 relative">
             <h1 className=" w-[92%] pl-2 rounded-md" key={todo.id}>
               {todo.todo}
             </h1>

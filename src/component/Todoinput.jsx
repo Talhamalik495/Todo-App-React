@@ -5,9 +5,7 @@ function TodoInput({ onClick, value, setInputValue }) {
 
   return (
     <>
-      {/* <div className="flex justify-center pt-5 h-[100%]  w-[100%] gap-2 relative px-5"> */}
       <form
-        // ref={inputRef}
         onSubmit={onClick}
         className="flex justify-center pt-5 h-[100%]  w-[100%] gap-2 relative px-5"
       >
@@ -30,7 +28,6 @@ function TodoInput({ onClick, value, setInputValue }) {
           Add
         </button>
       </form>
-      {/* </div> */}
     </>
   );
 }

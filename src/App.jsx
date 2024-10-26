@@ -30,6 +30,7 @@ function App() {
     ];
 
     setTodos([...todoArr]);
+    setInputValue("");
   };
   console.log(todos);
 
@@ -53,7 +54,7 @@ function App() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-black">
-      <div className="w-[600px] py-5 bg-white rounded-2xl flex flex-col justify-center">
+      <div className="w-[600px] py-5 bg-gray-200 rounded-2xl flex flex-col justify-center">
         <h1 className="text-2xl mx-4">Todo App</h1>
         <TodoInput
           value={inputValue}
