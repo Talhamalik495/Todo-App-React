@@ -1,30 +1,36 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function TodoInput({ onClick, value, setInputValue }) {
-  console.log(value);
+  let inputRef = useRef("");
 
   return (
     <>
-      <div className="flex justify-center pt-5 h-[100%]  w-[100%] gap-2 relative px-5">
+      {/* <div className="flex justify-center pt-5 h-[100%]  w-[100%] gap-2 relative px-5"> */}
+      <form
+        // ref={inputRef}
+        onSubmit={onClick}
+        className="flex justify-center pt-5 h-[100%]  w-[100%] gap-2 relative px-5"
+      >
         <input
           onChange={(e) => {
             console.log(e.target.value);
             setInputValue(e.target.value);
           }}
           value={value}
-          className=" w-full outline-none border-none h-12 border-2 border-black rounded-lg pl-2"
+          className=" w-full outline-none border-none h-12 border-2 bg-gray-200 rounded-lg pl-2"
           type="text"
           placeholder="Add Todo"
         />
 
         <button
           disabled={value == ""}
-          onClick={onClick}
+          // onClick={onClick}
           className="w-16 h-12 rounded-lg bg-black text-white"
         >
           Add
         </button>
-      </div>
+      </form>
+      {/* </div> */}
     </>
   );
 }

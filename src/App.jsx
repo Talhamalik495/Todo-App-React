@@ -17,7 +17,9 @@ function App() {
   const [edit, setEdit] = useState(null);
   console.log(todos);
 
-  let handleTodo = () => {
+  let handleTodo = (e) => {
+    e.preventDefault();
+
     const todoArr = [
       ...todos,
       {
@@ -51,7 +53,7 @@ function App() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-black">
-      <div className="w-[600px] py-5 bg-red-400 rounded-2xl flex flex-col justify-center">
+      <div className="w-[600px] py-5 bg-white rounded-2xl flex flex-col justify-center">
         <h1 className="text-2xl mx-4">Todo App</h1>
         <TodoInput
           value={inputValue}

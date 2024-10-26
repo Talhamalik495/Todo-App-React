@@ -10,7 +10,7 @@ function TodoList({ todos, deleteTodo, editTodo, togleTodo, edit }) {
       {todos.map((todo, index) => {
         return (
           <div className="flex bg-black w-full h-12 items-center rounded-md  text-white pr-1 gap-1 relative">
-            <h1 className=" w-[92%] pl-1 rounded-md" key={todo.id}>
+            <h1 className=" w-[92%] pl-2 rounded-md" key={todo.id}>
               {todo.todo}
             </h1>
             {/* <button
@@ -31,7 +31,7 @@ function TodoList({ todos, deleteTodo, editTodo, togleTodo, edit }) {
               <div>
                 <input
                   type="text"
-                  className="w-[100%] h-10 bg-red-500 absolute top-0 left-0"
+                  className="w-[100%] h-10  absolute top-0 left-0"
                 />
                 <MdSave
                   size={30}
