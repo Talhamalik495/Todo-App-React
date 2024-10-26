@@ -14,6 +14,7 @@ function App() {
   //     }
   // ])
   const [todos, setTodos] = useState([]);
+  const [edit, setEdit] = useState(null);
   console.log(todos);
 
   let handleTodo = () => {
@@ -22,6 +23,7 @@ function App() {
       {
         todo: inputValue,
         id: Date.now(),
+        completed: false,
       },
     ];
 
@@ -36,21 +38,35 @@ function App() {
   let editTodo = (todo, id) => {
     console.log(id);
     console.log(todos);
+    setEdit(id);
     setTodos((prev) => prev.map((data) => (data.id == id ? todo : data)));
+  };
+  let togleTodo = (id) => {
+    console.log(id);
+    console.log(todos);
+    setTodos((prev) =>
+      prev.map((data) => (data.id == id ? { ...data, completed: true } : data))
+    );
   };
 
   return (
-    <>
-      <h1 className=" text-center text-black mt-5 w-[100%] h-10 flex justify-center items-center text-2xl">
-        Todo App
-      </h1>
-      <TodoInput
-        value={inputValue}
-        setInputValue={setInputValue}
-        onClick={handleTodo}
-      />
-      <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
-    </>
+    <div className="w-full h-screen flex justify-center items-center bg-black">
+      <div className="w-[600px] py-5 bg-red-400 rounded-2xl flex flex-col justify-center">
+        <h1 className="text-2xl mx-4">Todo App</h1>
+        <TodoInput
+          value={inputValue}
+          setInputValue={setInputValue}
+          onClick={handleTodo}
+        />
+        <TodoList
+          todos={todos}
+          deleteTodo={deleteTodo}
+          editTodo={editTodo}
+          togleTodo={togleTodo}
+          edit={edit}
+        />
+      </div>
+    </div>
   );
 }
 

@@ -5,14 +5,14 @@ function TodoInput({ onClick, value, setInputValue }) {
 
   return (
     <>
-      <div className="flex justify-center pt-14  h-[100%]  w-[100%] gap-6">
+      <div className="flex justify-center pt-5 h-[100%]  w-[100%] gap-2 relative px-5">
         <input
           onChange={(e) => {
             console.log(e.target.value);
             setInputValue(e.target.value);
           }}
           value={value}
-          className=" w-96 h-10 border-2 border-black rounded-lg pl-2"
+          className=" w-full outline-none border-none h-12 border-2 border-black rounded-lg pl-2"
           type="text"
           placeholder="Add Todo"
         />
@@ -20,7 +20,7 @@ function TodoInput({ onClick, value, setInputValue }) {
         <button
           disabled={value == ""}
           onClick={onClick}
-          className="w-24 h-10 rounded-lg bg-black text-white"
+          className="w-16 h-12 rounded-lg bg-black text-white"
         >
           Add
         </button>
